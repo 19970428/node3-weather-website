@@ -16,7 +16,7 @@ const forecast = require('./utils/forecast')
     //2. response which is sent back to requester which is called res
 
 
-
+console.log('check')
 
 //we have made a static html file in public.Instead if writing in a string we will access a file.
 console.log(__dirname) //this is showing the current path . To got to public directory :
