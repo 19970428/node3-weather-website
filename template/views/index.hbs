@@ -1,0 +1,31 @@
+<!-- hbs is short form of handlle bars which is used for making the page dynamic. This code below is
+copied from index.html file that was present in public folder. It was static so i have deleted now. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather</title>
+    
+    <link rel="icon" type="image/ico" href="img/weather.png"/>
+    <link rel="stylesheet" href="/css/styles.css">  <!--Writing href withoutt .takes from server as server knows path from public-->
+    
+</head>
+<body>  
+    <!--We will call partials here like header.hbs-->
+    <div class='main-content'>
+    {{>header}} 
+    <p>Use this site to get your weather.</p>
+    <form>
+        <input placeholder="Location">
+        <button>Search</button>
+    </form>
+    <p id='message-1'></p>
+    <p id='message-2'></p>
+    </div>
+    <!-- run command node src/app -e hbs,js -->
+
+    <!--We cannot do like this in static html files. So to make it dynamic we used hbs -->
+    <!-- <h1>{{title}}</h1> rather than hardcoding we will provide a 2nd arguement in render in app.js-->
+    {{>footer}}
+    <script src='/js/app.js'></script> <!-- This is removed from head and put here because we wantes app.js to run after all the gets added. -->
+</body>
+</html>
