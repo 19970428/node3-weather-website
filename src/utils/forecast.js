@@ -12,7 +12,8 @@ const forecast = (long,lat,callback) =>{
             }
             else
             {
-                callback(undefined,body.daily.data[0].summary+'It is currently '+body.currently.temperature+' degrees out. there is '+body.currently.precipProbability+'% chance to rain.')
+                const temp = (body.currently.temperature - 32)*5/9
+                callback(undefined,body.daily.data[0].summary+'It is currently '+temp+' degrees out. there is '+body.currently.precipProbability+'% chance to rain.')
             }
         })
         
