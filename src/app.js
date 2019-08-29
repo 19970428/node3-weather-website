@@ -5,6 +5,9 @@ const app= express()
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
+const port = process.env.PORT || 3000 //On heroku process.env.PORT will exist 
+//but if we use it locally 3000 will exist and first one will not
+
 
 //app.get('') it have 2 arguements:
 //1. link we want to visit
@@ -125,9 +128,12 @@ app.get('*',(req,res)=>{
         errorMessage:'Page not found'
     })
 })
+//when call it locally localhost:3000
+// app.listen(3000 ,()=>{
+//     console.log('Server is up on port 3000!')
+// }) //port is 3000
 
-app.listen(3000 ,()=>{
-    console.log('Server is up on port 3000!')
-}) //port is 3000
-
-
+//when using heroku
+app.listen(port ,()=>{
+    console.log('Server is up on port '+port)
+})
