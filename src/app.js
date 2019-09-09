@@ -49,7 +49,7 @@ app.get('',(req,res)=>{
 
 app.get('/about',(req,res)=>{
     res.render('about',{
-        title:'Cat',
+        title:'About Me',
         name:'meow'
     })
 })
@@ -86,7 +86,7 @@ app.get('/weather',(req,res)=>
     if(!req.query.address)
     {
         return res.send('You must provide an address')
-    } 
+    }  
     //whenever destructure it use default params
     geocode(req.query.address,(error,{longitude,latitude,location} = {})=>{
         if(error)
